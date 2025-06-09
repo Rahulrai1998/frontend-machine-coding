@@ -4,6 +4,7 @@ import TabList from "./components/tab-list";
 import Theme from "./components/theme-provider";
 import MuiTab from "./components/mui-tabs";
 import MuiTabsPkg from "./components/mui-tabs-pkg";
+import TabComponent from "./components/tab-list";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <TabList/> */}
       {/* <Theme /> */}
       {/* <MuiTab /> */}
-      <MuiTabsPkg />
+      {/* <MuiTabsPkg /> */}
+      <TabComponent />
     </div>
   );
 }
