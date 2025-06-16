@@ -7,6 +7,8 @@ import MuiTabsPkg from "./components/mui-tabs-pkg";
 import TabComponent from "./components/tab-list";
 import AutoSuggestions from "./components/autosuggestion-typehead";
 import TabForm from "./components/tab-form";
+import Pagination from "./components/pagination";
+
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
       {/* <MuiTabsPkg /> */}
       {/* <TabComponent /> */}
       {/* <AutoSuggestions /> */}
-      <TabForm />
+      {/* <TabForm /> */}
+      <Pagination />
     </div>
   );
 }
