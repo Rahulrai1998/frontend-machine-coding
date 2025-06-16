@@ -2,16 +2,12 @@ body {
   text-align: center;
 }
 .products-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 .product-card {
   border-radius: 5px;
   display: flex;
   align-items: center;
-  min-width: 20vw;
+  width: 40vw;
   padding: 5px;
   margin: 5px auto;
   box-shadow: 0.2px 0.5px 1.5px grey;
@@ -21,4 +17,11 @@ body {
 }
 img {
   width: 80px;
+}
+button {
+  cursor: pointer;
+}
+
+button.active {
+  border: 1px solid red;
 }

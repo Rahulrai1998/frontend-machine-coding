@@ -1,18 +1,19 @@
 import React from "react";
 
-const ProductCard = ({ product }) => {
+const ProductCard = React.memo(({ product }) => {
+  const { title, images } = product || {};
   return (
     <div className="product-card">
       <div>
         {" "}
-        <img src={product?.images[0]} alt={product?.title} />
+        <img src={images[0]} alt={title || "Product image"} />
       </div>
       <div>
         {" "}
-        <span className="product-title">{product?.title}</span>
+        <span className="product-title">{title}</span>
       </div>
     </div>
   );
-};
+});
 
 export default ProductCard;
