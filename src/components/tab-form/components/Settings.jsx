@@ -1,4 +1,4 @@
-const Settings = ({ data, setData }) => {
+const Settings = ({ data, setData, errors }) => {
   const { theme } = data;
 
   const handleChange = (e) => {
@@ -32,6 +32,8 @@ const Settings = ({ data, setData }) => {
           light
         </label>
       </div>
+
+      {errors?.settings && <span>{errors?.settings}</span>}
     </>
   );
 };

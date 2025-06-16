@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { tabs } from "./tabsConfig";
+import Profile from "./components/Profile";
+import Interests from "./components/Interests";
+import Settings from "./components/Settings";
 import "./styles.css";
 
 const TabForm = () => {
@@ -9,14 +11,54 @@ const TabForm = () => {
     age: undefined,
     email: "",
     interests: [],
-    theme: "",
+    theme: "dark",
   });
+  const [errors, setErrors] = useState({});
+
+  const tabs = [
+    {
+      name: "Profile",
+      component: Profile,
+      hasError: () => {
+        let err = {};
+        if (!formData?.name || formData?.name?.length < 2)
+          err.name = "Invalid Name";
+        if (!formData?.age || formData?.age < 18) err.age = "Invalid Age";
+        if (
+          !formData?.email ||
+          formData?.email?.length < 2 ||
+          !formData?.email?.includes("@")
+        )
+          err.email = "Invalid Email";
+
+        setErrors(err);
+        return err?.name || err?.age || err?.email;
+      },
+    },
+    {
+      name: "Interests",
+      component: Interests,
+      hasError: () => {
+        const err = {};
+        if (formData.interests.length < 1) err.interests = "Select one";
+        setErrors(err);
+        return err.interests;
+      },
+    },
+    {
+      name: "Settings",
+      component: Settings,
+      hasError: () => {
+        return false;
+      },
+    },
+  ];
 
   const handlePrevious = () => {
     setActiveTab((tab) => tab - 1);
   };
   const handleNext = () => {
-    setActiveTab((tab) => tab + 1);
+    !tabs[activeTab]?.hasError() && setActiveTab((tab) => tab + 1);
   };
 
   const handleSubmit = (e) => {
@@ -25,6 +67,7 @@ const TabForm = () => {
   };
 
   const ActiveTabPanel = tabs[activeTab]?.component;
+
   return (
     <div style={{ width: "50%", margin: "10px auto" }}>
       <div role="tablist" aria-label="List of tabs">
@@ -35,7 +78,9 @@ const TabForm = () => {
             id={`tab-${index}`}
             aria-controls={`tabpanel-${index}`}
             className="tab-btn"
-            onClick={() => setActiveTab(index)}
+            onClick={() => {
+              !tabs[activeTab]?.hasError() && setActiveTab(index);
+            }}
           >
             {tab?.name}
           </button>
@@ -48,7 +93,11 @@ const TabForm = () => {
         method="POST"
       >
         <div className="form">
-          <ActiveTabPanel data={formData} setData={setFormData} />
+          <ActiveTabPanel
+            data={formData}
+            setData={setFormData}
+            errors={errors}
+          />
         </div>
         {activeTab > 0 && (
           <button type="submit" onClick={handlePrevious}>
