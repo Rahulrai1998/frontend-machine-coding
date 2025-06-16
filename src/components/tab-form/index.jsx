@@ -6,15 +6,21 @@ const TabForm = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
-    age: 0,
+    age: undefined,
     email: "",
     interests: [],
     theme: "",
   });
 
-  console.log({...formData});
+  const handlePrevious = () => {
+    setActiveTab((tab) => tab - 1);
+  };
+  const handleNext = () => {
+    setActiveTab((tab) => tab + 1);
+  };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e?.preventDefault();
     console.log(formData);
   };
 
@@ -27,6 +33,7 @@ const TabForm = () => {
             role="tab"
             key={index}
             id={`tab-${index}`}
+            aria-controls={`tabpanel-${index}`}
             className="tab-btn"
             onClick={() => setActiveTab(index)}
           >
@@ -34,12 +41,27 @@ const TabForm = () => {
           </button>
         ))}
       </div>
-      <form className="form" aria-labelledby={`tabpanel-${activeTab}`}>
-        <ActiveTabPanel data={formData} setData={setFormData} />
+      <form
+        id={`tabpanel-${activeTab}`}
+        aria-labelledby={`tab-${activeTab}`}
+        onSubmit={handleSubmit}
+        method="POST"
+      >
+        <div className="form">
+          <ActiveTabPanel data={formData} setData={setFormData} />
+        </div>
+        {activeTab > 0 && (
+          <button type="submit" onClick={handlePrevious}>
+            Previous
+          </button>
+        )}
+        {activeTab < tabs.length - 1 && (
+          <button type="submit" onClick={handleNext}>
+            Next
+          </button>
+        )}
+        {activeTab === tabs.length - 1 && <button type="submit">Submit</button>}
       </form>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
     </div>
   );
 };
