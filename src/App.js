@@ -10,6 +10,7 @@ import TabForm from "./components/tab-form";
 import Pagination from "./components/pagination";
 import ProgressBar from "./components/progressbar";
 import Timer from "./components/timer";
+import Dropdown from "./components/dropdown";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
       {/* <ProgressBar /> */}
-      <Timer />
+      {/* <Timer /> */}
+      <Dropdown />
     </div>
   );
 }
