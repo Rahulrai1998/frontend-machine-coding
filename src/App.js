@@ -9,7 +9,6 @@ import AutoSuggestions from "./components/autosuggestion-typehead";
 import TabForm from "./components/tab-form";
 import Pagination from "./components/pagination";
 
-
 function App() {
   return (
     <div className="App">
@@ -20,7 +19,8 @@ function App() {
       {/* <TabComponent /> */}
       {/* <AutoSuggestions /> */}
       {/* <TabForm /> */}
-      <Pagination />
+      {/* <Pagination /> */}
+      <AutoSuggestions />
     </div>
   );
 }
