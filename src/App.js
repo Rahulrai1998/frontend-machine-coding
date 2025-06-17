@@ -9,6 +9,7 @@ import AutoSuggestions from "./components/autosuggestion-typehead";
 import TabForm from "./components/tab-form";
 import Pagination from "./components/pagination";
 import ProgressBar from "./components/progressbar";
+import Timer from "./components/timer";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
-      <ProgressBar />
+      {/* <ProgressBar /> */}
+      <Timer />
     </div>
   );
 }
