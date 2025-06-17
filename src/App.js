@@ -8,6 +8,7 @@ import TabComponent from "./components/tab-list";
 import AutoSuggestions from "./components/autosuggestion-typehead";
 import TabForm from "./components/tab-form";
 import Pagination from "./components/pagination";
+import ProgressBar from "./components/progressbar";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <AutoSuggestions /> */}
       {/* <TabForm /> */}
       {/* <Pagination /> */}
-      <AutoSuggestions />
+      {/* <AutoSuggestions /> */}
+      <ProgressBar />
     </div>
   );
 }
