@@ -12,6 +12,7 @@ import ProgressBar from "./components/progressbar";
 import Timer from "./components/timer";
 import Dropdown from "./components/dropdown";
 import { Calculator } from "./components/calculator";
+import { CalculatorOptm } from "./components/calculator-optm";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
       {/* <ProgressBar /> */}
       {/* <Timer /> */}
       {/* <Dropdown /> */}
-      
       <Calculator />
+      <CalculatorOptm />
     </div>
   );
 }

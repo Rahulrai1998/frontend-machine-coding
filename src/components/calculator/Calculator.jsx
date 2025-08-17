@@ -38,6 +38,7 @@ const Calculator = () => {
         setInput("");
         break;
       default:
+        console.log(input, " ", key);
         setInput((inp) => inp + key);
     }
     if (key === "=") {
@@ -97,9 +98,11 @@ OPTIMIZATIONS
         - without useMemo(), the keypad array is built every time the parent component re-renders.
         - a new array reference is created each time
         - Any child component relying on keys may re-render unnecesaarily.
-- Accessibilty enhancements.
+- Accessibilty & SEO enhancements.
     - add aria-pressed to buttons. 
-    - add keyboard navigation with onKeyDown and tabindex       
+    - add keyboard navigation with onKeyDown and tabindex
+    - Use semantic tags
+
 
 - use auto-fit and minmax grid for fluid resizing off keys
 - split the code into smaller components like, Display, Keypad, Button

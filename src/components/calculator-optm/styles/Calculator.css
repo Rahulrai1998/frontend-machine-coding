@@ -1,0 +1,16 @@
+.calculator {
+  width: 60%;
+  margin: 1rem auto;
+  border: 1px solid grey;
+}
+.input {
+  width: 90%;
+  margin: 1rem auto;
+}
+.keypad {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0.5rem;
+  cursor: pointer;
+}
