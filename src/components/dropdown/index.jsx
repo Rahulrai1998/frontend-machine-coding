@@ -11,7 +11,6 @@ const defaultOptions = [
 ];
 const Dropdown = ({ options = defaultOptions, placeholder = "Search..." }) => {
   const [search, setSearch] = useState("");
-  const [selected, setSelected] = useState(null);
 
   const filteredOptions = options.filter((option) =>
     option.label.toLowerCase().includes(search.toLowerCase())

@@ -11,6 +11,7 @@ import Pagination from "./components/pagination";
 import ProgressBar from "./components/progressbar";
 import Timer from "./components/timer";
 import Dropdown from "./components/dropdown";
+import { Calculator } from "./components/calculator";
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
       {/* <AutoSuggestions /> */}
       {/* <ProgressBar /> */}
       {/* <Timer /> */}
-      <Dropdown />
+      {/* <Dropdown /> */}
+      
+      <Calculator />
     </div>
   );
 }
