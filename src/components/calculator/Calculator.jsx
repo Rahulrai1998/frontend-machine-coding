@@ -20,19 +20,38 @@ const Calculator = () => {
     "/",
     "*",
     "=",
+    "C",
   ];
 
   const handleClick = (e, key) => {
-    setInput((inp) => inp + key);
+    switch (key) {
+      case "=":
+        try {
+          setResult(eval(input));
+        } catch (error) {
+          setResult(error);
+          console.log(error);
+        }
+        break;
+      case "C":
+        setResult("");
+        setInput("");
+        break;
+      default:
+        setInput((inp) => inp + key);
+    }
     if (key === "=") {
-      setResult(eval(input));
-      setInput("");
     }
   };
 
   return (
-    <div style={{ width: "50%", margin: "auto" }}>
+    <div
+      style={{ width: "50%", margin: "auto" }}
+      role="application"
+      aria-label="Calculator"
+    >
       <input
+        aria-live="polite"
         type="text"
         value={input}
         placeholder="Enter..."
@@ -47,7 +66,12 @@ const Calculator = () => {
         }}
       >
         {keys.map((key, i) => (
-          <button type="button" key={i} onClick={(e) => handleClick(e, key)}>
+          <button
+            type="button"
+            key={i}
+            onClick={(e) => handleClick(e, key)}
+            aria-label={`${key} Button`}
+          >
             {key}
           </button>
         ))}
@@ -58,3 +82,26 @@ const Calculator = () => {
 };
 
 export default Calculator;
+
+/*
+OPTIMIZATIONS
+- avoid using eval()
+    - it is less secure, prone to XSS attacks as it executes arbitrary JS code.
+    - less performant and bad for debugging
+    - use any Math parser like, mathsjs, or JSON.parse()
+- use useReducer() instead useState(), for input and result
+    - more scalable and testable logic
+- memoise the static keypad data to avoid un-necessary re-renders
+    - performance boosts for large UIs or frequent updates/parent re-renderings.
+    What happend if not use useMemo() for the keypad data ?
+        - without useMemo(), the keypad array is built every time the parent component re-renders.
+        - a new array reference is created each time
+        - Any child component relying on keys may re-render unnecesaarily.
+- Accessibilty enhancements.
+    - add aria-pressed to buttons. 
+    - add keyboard navigation with onKeyDown and tabindex       
+
+- use auto-fit and minmax grid for fluid resizing off keys
+- split the code into smaller components like, Display, Keypad, Button
+- Add Unit Tests
+*/
