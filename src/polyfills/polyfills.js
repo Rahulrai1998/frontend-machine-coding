@@ -19,6 +19,26 @@ Array.prototype.myReduce = function (callback, initial) {
   for (let i = 0; i < this.length; i++) {
     accum = accum ? callback(accum, this[i], i, this) : this[i];
   }
-
   return accum;
+};
+
+Function.prototype.myCall = function (ctx = {}, ...args) {
+  if (typeof this !== "function") throw new Error(this + " is not a function");
+  ctx.fn = this;
+  ctx.fn(...args);
+};
+
+Function.prototype.myApply = function (ctx = {}, args = []) {
+  if (typeof this !== "function") throw new Error(this + " is not function");
+  if (!Array.isArray(args)) throw new Error(args + " Not Array");
+  ctx.fn = this;
+  ctx.fn(...args);
+};
+
+Function.prototype.myBind = function (ctx = {}, ...args) {
+  if (typeof this !== "function") throw new Error("Not a function");
+  ctx.fn = this;
+  return function (...restArgs) {
+    return ctx.fn(...args, ...restArgs);
+  };
 };
