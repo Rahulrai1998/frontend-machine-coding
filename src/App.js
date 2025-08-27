@@ -14,6 +14,7 @@ import Dropdown from "./components/dropdown";
 import { Calculator } from "./components/calculator";
 import { CalculatorOptm } from "./components/calculator-optm";
 import { Todo } from "./components/todo";
+import PolyfillsTester from "./components/PolyfillsTester";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       {/* <Dropdown /> */}
       {/* <Calculator />
       <CalculatorOptm /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <PolyfillsTester />
     </div>
   );
 }

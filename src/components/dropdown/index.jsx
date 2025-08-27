@@ -17,7 +17,7 @@ const Dropdown = ({ options = defaultOptions, placeholder = "Search..." }) => {
   );
 
   const handleSelect = (option) => {
-    setSelected(option);
+    // setSelected(option);
     setSearch("");
   };
 
