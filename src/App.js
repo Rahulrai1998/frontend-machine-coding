@@ -28,13 +28,13 @@ function App() {
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
-      {/* <ProgressBar /> */}
-      {/* <Timer /> */}
+      <ProgressBar />
+      <Timer />
       {/* <Dropdown /> */}
       {/* <Calculator />
       <CalculatorOptm /> */}
       {/* <Todo /> */}
-      <PolyfillsTester />
+      {/* <PolyfillsTester /> */}
     </div>
   );
 }

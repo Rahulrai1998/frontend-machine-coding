@@ -42,3 +42,23 @@ Function.prototype.myBind = function (ctx = {}, ...args) {
     return ctx.fn(...args, ...restArgs);
   };
 };
+
+function myDebounce(fun, delay) {
+  let timer;
+  return function (...args) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fun(...args);
+    }, delay);
+  };
+}
+
+const myThrottle = (callback, delay) => {
+  const last = 0;
+  return function (...args) {
+    let now = new Date().getTime();
+    if (now - last < delay) return;
+    last = now;
+    callback(...args);
+  };
+};
