@@ -15,6 +15,7 @@ import { Calculator } from "./components/calculator";
 import { CalculatorOptm } from "./components/calculator-optm";
 import { Todo } from "./components/todo";
 import PolyfillsTester from "./components/PolyfillsTester";
+import GridLights from "./components/grid-lights/GridLights";
 
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
-      <ProgressBar />
-      <Timer />
+      {/* <ProgressBar />
+      <Timer /> */}
       {/* <Dropdown /> */}
       {/* <Calculator />
       <CalculatorOptm /> */}
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
+      <GridLights />
     </div>
   );
 }
