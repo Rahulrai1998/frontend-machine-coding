@@ -12,9 +12,23 @@ code {
     monospace;
 }
 
-.grid-light-box {
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  background: red;
+div.grid-light-box {
+  width: 30%;
+  height: 30%;
+  margin: 10% auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.light-cube {
+  text-align: center;
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  margin: 5px;
+  cursor: pointer;
 }

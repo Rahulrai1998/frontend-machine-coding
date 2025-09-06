@@ -10,11 +10,13 @@ const GridLights = () => {
   return (
     <div className="grid-light-box">
       {config?.map((row, i) => (
-        <div key={i}>
+        <div key={i} className="grid-container">
           {row?.map((cube, j) => {
-            <div key={j} className="light-cube">
-              {cube}
-            </div>;
+            return (
+              <div key={j} className="light-cube">
+                {cube}
+              </div>
+            );
           })}
         </div>
       ))}
