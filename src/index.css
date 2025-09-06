@@ -32,8 +32,9 @@ div.grid-light-box {
   height: 100% !important;
   cursor: pointer;
   border: 1px solid white;
+  background-color: aqua;
 }
 
-.light-bg {
-  background-color: aqua;
+.off-bg {
+  background-color: antiquewhite;
 }

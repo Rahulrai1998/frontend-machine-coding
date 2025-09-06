@@ -2,7 +2,7 @@ import React from "react";
 
 const GridLights = () => {
   const config = [
-    [1, 0, 0],
+    [1, 0, 1],
     [0, 1, 1],
     [1, 0, 1],
   ];
@@ -13,9 +13,10 @@ const GridLights = () => {
         <div key={i} className="grid-container">
           {row?.map((cube, j) => {
             return (
-              <div key={j} className="light-cube light-bg">
-                
-              </div>
+              <div
+                key={j}
+                className={`light-cube ${cube === 0 ? "off-bg" : null}`}
+              ></div>
             );
           })}
         </div>
