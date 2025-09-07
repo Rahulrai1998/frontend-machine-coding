@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 const GridLights = () => {
   const [stack, setStack] = useState(new Map());
   const [rolling, setRolling] = useState(false);
+
   const config = [
-    [1, 0, 1],
-    [0, 1, 1],
-    [1, 0, 1],
+    [1, 0, 1, 0],
+    [0, 1, 1, 0],
+    [1, 0, 1, 1],
+    [1, 1, 0, 0],
   ];
+
+  //OPTIMIZATIONS
+  const bitCubes = useMemo(
+    () => config.flat().reduce((acc, cur) => acc + cur, 0),
+    [config]
+  );
 
   const handleClick = (rowIndex, colIndex) => {
     const newStack = structuredClone(stack);
@@ -19,10 +27,10 @@ const GridLights = () => {
     }
     setStack(newStack);
 
-    const cubesWithOne = config.flat().reduce((acc, cur) => acc + cur, 0);
-    if (cubesWithOne === newStack.size) {
+    if (bitCubes === newStack.size) {
       rollBack();
     }
+    
   };
 
   const rollBack = () => {
