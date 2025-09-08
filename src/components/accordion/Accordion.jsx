@@ -5,8 +5,7 @@ const Accordion = () => {
   return (
     <div className="accord-parent">
       {data?.map((elm) => (
-        <div className="card" key={elm.id}>
-          {" "}
+        <div className="accord-card" key={elm.id}>
           {elm?.title}
         </div>
       ))}

@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* GRID LIGHTS */
 div.grid-light-box {
   width: 50vw;
   height: 50vh;
@@ -42,11 +43,18 @@ div.grid-light-box {
 .on-bg {
   background-color: brown;
 }
-/* Accordion */
+
+/* ACCORDION */
 .accord-parent {
   width: 60%;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 10% auto;
   justify-content: center;
+}
+
+.accord-card {
+  border: 1px solid grey;
+  text-align: left;
+  padding: 8px;
 }
