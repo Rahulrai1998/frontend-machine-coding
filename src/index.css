@@ -41,5 +41,12 @@ div.grid-light-box {
 
 .on-bg {
   background-color: brown;
-  
+}
+/* Accordion */
+.accord-parent {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
 }

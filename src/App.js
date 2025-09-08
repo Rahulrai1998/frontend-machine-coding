@@ -16,6 +16,8 @@ import { CalculatorOptm } from "./components/calculator-optm";
 import { Todo } from "./components/todo";
 import PolyfillsTester from "./components/PolyfillsTester";
 import GridLights from "./components/grid-lights/GridLights";
+import { Accordion } from "./components/accordion";
+
 
 function App() {
   return (
@@ -36,7 +38,8 @@ function App() {
       <CalculatorOptm /> */}
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
-      <GridLights />
+      {/* <GridLights /> */}
+      <Accordion />
     </div>
   );
 }
