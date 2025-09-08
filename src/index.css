@@ -30,7 +30,7 @@ div.grid-light-box {
   text-align: center !important;
   width: 100%;
   height: 100% !important;
-  cursor: pointer;
+
   border: 1px solid white;
   background-color: aqua;
 }
@@ -41,4 +41,5 @@ div.grid-light-box {
 
 .on-bg {
   background-color: brown;
+  
 }

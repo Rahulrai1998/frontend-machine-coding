@@ -30,7 +30,7 @@ const GridLights = () => {
     if (bitCubes === newStack.size) {
       rollBack();
     }
-    
+
   };
 
   const rollBack = () => {
@@ -46,7 +46,7 @@ const GridLights = () => {
         newStack.delete(lastKey);
         return newStack;
       });
-    }, 1000);
+    }, 200);
   };
 
   return (
