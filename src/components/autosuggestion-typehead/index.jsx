@@ -6,12 +6,13 @@ const AutoSuggestions = () => {
   const [input, setInput] = useState("");
   const [showResultsCard, setShowResultsCard] = useState(false);
   const [cache, setCache] = useState({});
-  
+
   const fetchData = async () => {
     try {
+      console.log(cache, "CACHE");
       if (cache[input]) {
         setRecipe(cache[input]);
-        console.log("Inside Cache", input);
+        console.log("Inside Cache", recipe);
         return;
       }
       const res = await fetch(
@@ -23,6 +24,7 @@ const AutoSuggestions = () => {
     } catch (error) {
       console.log(error);
     } finally {
+      console.log("Data fetched!!!");
     }
   };
 
@@ -56,12 +58,16 @@ const AutoSuggestions = () => {
         //   !resultRef?.current && setShowResultsCard(false);
         // }}
       />
-      {showResultsCard && (
+      {showResultsCard && recipe.length !== 0 && (
         <div className="suggestion-card">
           {recipe?.map((elm) => (
             <div
               key={elm?.id}
-              style={{ padding: "5px", textAlign: "left", cursor: "pointer" }}
+              style={{
+                padding: "5px",
+                textAlign: "left",
+                cursor: "pointer",
+              }}
               onClick={() => handleClick(elm?.name)}
             >
               {elm?.name}

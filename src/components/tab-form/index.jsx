@@ -14,7 +14,6 @@ const TabForm = () => {
     theme: "dark",
   });
   const [errors, setErrors] = useState({});
-
   const tabs = [
     {
       name: "Profile",

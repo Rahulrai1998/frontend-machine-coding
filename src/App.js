@@ -27,19 +27,19 @@ function App() {
       {/* <MuiTab /> */}
       {/* <MuiTabsPkg /> */}
       {/* <TabComponent /> */}
-      {/* <AutoSuggestions /> */}
+      <AutoSuggestions />
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
-      {/* <ProgressBar />
-      <Timer /> */}
+      {/* <ProgressBar />*/}
+      {/* <Timer />  */}
       {/* <Dropdown /> */}
-      {/* <Calculator />
-      <CalculatorOptm /> */}
+       {/* <Calculator /> */}
+      {/* <CalculatorOptm /> */}
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
       {/* <GridLights /> */}
-      <Accordion />
+      {/* <Accordion /> */}
     </div>
   );
 }

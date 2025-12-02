@@ -32,6 +32,7 @@ const Timer = () => {
 
     return () => clearInterval(timer);
   }, [isRunning]);
+  
   return (
     <div>
       <div style={{ textAlign: "center" }}>{time}</div>
