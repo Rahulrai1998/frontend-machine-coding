@@ -1,0 +1,26 @@
+.carousel,
+.box {
+  width: 80vw;
+  min-width: 200px;
+  height: 60vh;
+  display: flex;
+  margin: 10px auto;
+}
+
+.box {
+  margin: 40px;
+  position: relative;
+}
+
+.app img {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  border: 6px;
+  position: absolute;
+  opacity: 0;
+}

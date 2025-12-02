@@ -17,7 +17,7 @@ import { Todo } from "./components/todo";
 import PolyfillsTester from "./components/PolyfillsTester";
 import GridLights from "./components/grid-lights/GridLights";
 import { Accordion } from "./components/accordion";
-
+import CarouselComp from "./components/carousel";
 
 function App() {
   return (
@@ -27,19 +27,20 @@ function App() {
       {/* <MuiTab /> */}
       {/* <MuiTabsPkg /> */}
       {/* <TabComponent /> */}
-      <AutoSuggestions />
+      {/* <AutoSuggestions /> */}
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
       {/* <ProgressBar />*/}
       {/* <Timer />  */}
       {/* <Dropdown /> */}
-       {/* <Calculator /> */}
+      {/* <Calculator /> */}
       {/* <CalculatorOptm /> */}
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
       {/* <GridLights /> */}
       {/* <Accordion /> */}
+      <CarouselComp />
     </div>
   );
 }
