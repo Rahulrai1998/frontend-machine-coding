@@ -145,6 +145,7 @@ const Carousel = ({ children }) => {
         ))}
       </section>
       <button
+        className="carousel-btn"
         id="left-btn"
         onClick={handlePrevious}
         aria-controls={`image-${currentIndex}`}
@@ -152,6 +153,7 @@ const Carousel = ({ children }) => {
         {"<"}
       </button>
       <button
+        className="carousel-btn"
         id="right-btn"
         onClick={handleNext}
         aria-controls={`image-${currentIndex}`}

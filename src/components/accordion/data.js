@@ -19,4 +19,9 @@ export const data = [
     title: "Fullstack skills",
     content: "Hold the grab over full-fledged software engineer.",
   },
+  {
+    id: 5,
+    title: "AI/ML",
+    content: null,
+  },
 ];

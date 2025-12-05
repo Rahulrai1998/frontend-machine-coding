@@ -18,6 +18,7 @@ import PolyfillsTester from "./components/PolyfillsTester";
 import GridLights from "./components/grid-lights/GridLights";
 import { Accordion } from "./components/accordion";
 import CarouselComp from "./components/carousel";
+import CarouselTwo from "./components/carouselTwo";
 
 function App() {
   return (
@@ -39,8 +40,9 @@ function App() {
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
       {/* <GridLights /> */}
-      {/* <Accordion /> */}
-      <CarouselComp />
+      <Accordion />
+      {/* <CarouselComp /> */}
+      {/* <CarouselTwo /> */}
     </div>
   );
 }
