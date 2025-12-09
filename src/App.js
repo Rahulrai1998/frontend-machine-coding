@@ -32,7 +32,7 @@ function App() {
       {/* <TabForm /> */}
       {/* <Pagination /> */}
       {/* <AutoSuggestions /> */}
-      {/* <ProgressBar />*/}
+      <ProgressBar />
       {/* <Timer />  */}
       {/* <Dropdown /> */}
       {/* <Calculator /> */}
@@ -40,7 +40,7 @@ function App() {
       {/* <Todo /> */}
       {/* <PolyfillsTester /> */}
       {/* <GridLights /> */}
-      <Accordion />
+      {/* <Accordion /> */}
       {/* <CarouselComp /> */}
       {/* <CarouselTwo /> */}
     </div>
