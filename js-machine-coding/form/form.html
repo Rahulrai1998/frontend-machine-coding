@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Accessible Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f4f6f8;
+        padding: 40px;
+      }
+
+      .form-container {
+        max-width: 720px;
+        margin: auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+
+      fieldset {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 18px;
+      }
+
+      legend {
+        font-weight: 600;
+        padding: 0 8px;
+      }
+
+      .inline-group {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .inline-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: normal;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        width: auto;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      button {
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .submit-btn {
+        background: #1976d2;
+        color: #fff;
+      }
+
+      .reset-btn {
+        background: #ccc;
+      }
+
+      .required {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="form-container">
+      <h1>User Registration Form</h1>
+
+      <form
+      
+        enctype="multipart/form-data"
+        autocomplete="on"
+        novalidate
+        aria-labelledby="form-title"
+      >
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">
+            Full Name <span class="required">*</span>
+          </label>
+          <input
+            id="fullName"
+            name="fullName"
+            type="text"
+            required
+            aria-required="true"
+            placeholder="Enter your full name"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">
+            Email Address <span class="required">*</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            aria-required="true"
+            autocomplete="email"
+            placeholder="example@email.com"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">
+            Password <span class="required">*</span>
+          </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            aria-required="true"
+            minlength="8"
+          />
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+91 9876543210"
+          />
+        </div>
+
+        <!-- Gender -->
+        <fieldset>
+          <legend>Gender</legend>
+          <div class="inline-group">
+            <label for="male">
+              <input id="male" type="radio" name="gender" value="male" /> Male
+            </label>
+            <label for="female">
+              <input id="female" type="radio" name="gender" value="female" />
+              Female
+            </label>
+            <label for="other">
+              <input id="other" type="radio" name="gender" value="other" />
+              Other
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Skills -->
+        <fieldset>
+          <legend>Skills</legend>
+          <div class="inline-group">
+            <label for="html">
+              <input id="html" type="checkbox" name="skills" value="html" />
+              HTML
+            </label>
+            <label for="css">
+              <input id="css" type="checkbox" name="skills" value="css" /> CSS
+            </label>
+            <label for="js">
+              <input id="js" type="checkbox" name="skills" value="javascript" />
+              JavaScript
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Country -->
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select country</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+          </select>
+        </div>
+
+        <!-- DOB -->
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date" />
+        </div>
+
+        <!-- Range -->
+        <div class="form-group">
+          <label for="experience">Experience Level</label>
+          <input
+            id="experience"
+            name="experience"
+            type="range"
+            min="0"
+            max="10"
+            aria-valuemin="0"
+            aria-valuemax="10"
+          />
+        </div>
+
+        <!-- File -->
+        <div class="form-group">
+          <label for="resume">Upload Resume</label>
+          <input
+            id="resume"
+            name="resume"
+            type="file"
+            accept=".pdf,.doc,.docx"
+          />
+        </div>
+
+        <!-- About -->
+        <div class="form-group">
+          <label for="about">About You</label>
+          <textarea
+            id="about"
+            name="about"
+            placeholder="Write something about yourself"
+          ></textarea>
+        </div>
+
+        <!-- Readonly -->
+        <div class="form-group">
+          <label for="referral">Referral Code</label>
+          <input
+            id="referral"
+            name="referral"
+            type="text"
+            value="REF123"
+            readonly
+          />
+        </div>
+
+        <!-- Hidden -->
+        <input type="hidden" name="source" value="website" />
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="submit" class="submit-btn">Submit</button>
+          <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+        <section
+          id="form-output"
+          aria-live="polite"
+          style="
+            margin-top: 40px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+          "
+        >
+          <p>No data submitted yet.</p>
+        </section>
+
+        <script src="form.js"></script>
+      </form>
+    </main>
+  </body>
+</html>
