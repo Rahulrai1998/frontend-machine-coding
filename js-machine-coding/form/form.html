@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Accessible Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="form.css" />
 
     <style>
       * {
@@ -119,7 +120,8 @@
       <h1>User Registration Form</h1>
 
       <form
-      
+        action="/submit"
+        method="post"
         enctype="multipart/form-data"
         autocomplete="on"
         novalidate
@@ -305,7 +307,7 @@
           <p>No data submitted yet.</p>
         </section>
 
-        <script src="form.js"></script>
+        <script src="form.js" defer></script>
       </form>
     </main>
   </body>

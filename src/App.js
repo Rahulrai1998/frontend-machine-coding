@@ -39,12 +39,13 @@ function App() {
       {/* <Calculator /> */}
       {/* <CalculatorOptm /> */}
       {/* <Todo /> */}
-      {/* <PolyfillsTester /> */}
       {/* <GridLights /> */}
       {/* <Accordion /> */}
       {/* <CarouselComp /> */}
       {/* <CarouselTwo /> */}
-      <Modal />
+      {/* <Modal /> */}
+
+      {/* <PolyfillsTester /> */}
     </div>
   );
 }
