@@ -62,3 +62,12 @@ const myThrottle = (callback, delay) => {
     callback(...args);
   };
 };
+
+function once(func, ctx) {
+  let value;
+  if (func) {
+    value = func.apply(ctx || this, arguments);
+    func = null;
+  }
+  return value;
+}

@@ -16,6 +16,8 @@ const Todo = () => {
   const handleDelete = (id) => {
     setTodoData((prev) => prev.filter((todo) => todo.id != id));
   };
+
+  console.log(todoData)
   return (
     <section role="application" className="todo-parent" aria-label="Todo">
       <AddTodo

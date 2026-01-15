@@ -19,7 +19,7 @@ import GridLights from "./components/grid-lights/GridLights";
 import { Accordion } from "./components/accordion";
 import CarouselComp from "./components/carousel";
 import CarouselTwo from "./components/carouselTwo";
-import Modal from "./components/modal-dialog";
+// import Modal from "./components/modal-dialog";
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function App() {
       {/* <CarouselTwo /> */}
       {/* <Modal /> */}
 
-      {/* <PolyfillsTester /> */}
+      <PolyfillsTester />
     </div>
   );
 }

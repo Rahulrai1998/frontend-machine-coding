@@ -8,8 +8,8 @@ const TodoList = ({ todoData, handleDelete }) => {
       {todoData?.map((todo) => {
         return (
           <p key={todo?.id}>
-            {todo?.text}{" "}
-            <button onClick={() => handleDelete(todo.id)}>X</button>
+            {todo?.text} <button>update</button>
+            <button onClick={() => handleDelete(todo.id)}>delete</button>
           </p>
         );
       })}
