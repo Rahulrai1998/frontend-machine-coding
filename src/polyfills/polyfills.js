@@ -71,3 +71,17 @@ function once(func, ctx) {
   }
   return value;
 }
+
+//memoize a function for expensive computations.
+function memoize(func, ctx) {
+  let memo = {};
+  return function (...args) {
+    let key = JSON.stringify(args);
+    if (memo[key]) {
+      console.log(memo[key]);
+    } else {
+      memo[key] = func.call(ctx || this, ...args);
+    }
+    return memo[key];
+  };
+}
