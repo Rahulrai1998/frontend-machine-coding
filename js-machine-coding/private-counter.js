@@ -17,7 +17,6 @@ function counter() {
 
   return { add, retrive };
 }
-
 const privateCounter = counter();
 privateCounter.add(10); //10
 privateCounter.add(20); //30
