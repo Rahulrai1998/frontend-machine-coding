@@ -53,6 +53,7 @@ function myDebounce(fun, delay) {
   };
 }
 //debounce in a react-component, based on search-input key-strokes
+/*
 useEffect(() => {
   let timer = setTimeout(() => {
     //function/event-handler goes here
@@ -60,7 +61,7 @@ useEffect(() => {
   return () => {
     clearTimeout(timer);
   };
-}, [input]);
+}, [input]);*/
 
 const myThrottle = (callback, delay) => {
   const last = 0;
