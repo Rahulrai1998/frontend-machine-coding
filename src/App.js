@@ -20,7 +20,7 @@ import { Accordion } from "./components/accordion";
 import CarouselComp from "./components/carousel";
 import CarouselTwo from "./components/carouselTwo";
 import FetchData from "./components/api-data-fetch";
-// import Modal from "./components/modal-dialog";
+import ModalContainer from "./components/modal-dialog";
 
 function App() {
   return (
@@ -44,8 +44,8 @@ function App() {
       {/* <Accordion /> */}
       {/* <CarouselComp /> */}
       {/* <CarouselTwo /> */}
-      {/* <Modal /> */}
-      <FetchData />
+      <ModalContainer />
+      {/* <FetchData /> */}
 
       {/* <PolyfillsTester /> */}
     </div>
