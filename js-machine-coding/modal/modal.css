@@ -1,0 +1,16 @@
+div.parent {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+div.modal {
+  width: 500px;
+  height: 400px;
+  background: rgb(207, 207, 207);
+}
