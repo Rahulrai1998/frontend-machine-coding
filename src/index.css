@@ -89,6 +89,9 @@ button.accord-title-btn {
 }
 
 /* MODAL */
+.modal-wrapper{
+  
+}
 .modal-container {
   position: fixed;
   border: 1px solid black;

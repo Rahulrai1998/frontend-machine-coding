@@ -18,9 +18,9 @@ import PolyfillsTester from "./components/PolyfillsTester";
 import GridLights from "./components/grid-lights/GridLights";
 import { Accordion } from "./components/accordion";
 import CarouselComp from "./components/carousel";
-import CarouselTwo from "./components/carouselTwo";
+import CarouselOne from "./components/carousel-one";
 import FetchData from "./components/api-data-fetch";
-import ModalContainer from "./components/modal-dialog";
+import ModalOne from "./components/modal-dialog";
 
 function App() {
   return (
@@ -43,10 +43,9 @@ function App() {
       {/* <GridLights /> */}
       {/* <Accordion /> */}
       {/* <CarouselComp /> */}
-      {/* <CarouselTwo /> */}
-      <ModalContainer />
+      {/* <CarouselOne /> */}
+      <ModalOne />
       {/* <FetchData /> */}
-
       {/* <PolyfillsTester /> */}
     </div>
   );
