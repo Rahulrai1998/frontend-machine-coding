@@ -1,7 +1,13 @@
 import React from "react";
+import { ImageCarousel } from "./ImageCarousel";
+import "./carouselOne.css";
 
 const CarouselOne = () => {
-  return <div>CarouselOne</div>;
+  return (
+    <div>
+      <ImageCarousel />
+    </div>
+  );
 };
 
 export default CarouselOne;

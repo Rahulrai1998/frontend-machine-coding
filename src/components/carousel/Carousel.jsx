@@ -120,6 +120,7 @@ const Carousel = ({ children }) => {
         aria-live="polite"
         id={`image-${currentIndex}`}
       ></span>
+
       <section
         className="box"
         aria-label="Changing Images"
@@ -132,18 +133,20 @@ const Carousel = ({ children }) => {
       >
         {children}
       </section>
+
       <section className="stepper" aria-label="Stepper">
         {Array.from(children)?.map((_, index) => (
           <div
             aria-controls={`image-${currentIndex}`}
             aria-label="dot"
-            className={`stepperDot   ${
+            className={`stepperDot ${
               currentIndex === index ? "focusDot" : null
             }`}
             onClick={() => handleDotClick(index)}
           ></div>
         ))}
       </section>
+
       <button
         className="carousel-btn"
         id="left-btn"
@@ -152,6 +155,7 @@ const Carousel = ({ children }) => {
       >
         {"<"}
       </button>
+      
       <button
         className="carousel-btn"
         id="right-btn"

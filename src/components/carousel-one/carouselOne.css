@@ -1,0 +1,33 @@
+img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.container {
+  margin: 100px auto;
+  width: 60%;
+  position: relative;
+}
+
+.arrow-btn {
+  position: absolute;
+  background-color: rgba(144, 144, 144, 0.6);
+  text-align: center;
+  top: 50%;
+  padding: 0.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  transform: translateY(-50%);
+}
+.left-arrow-btn {
+  left: -30px;
+}
+.right-arrow-btn {
+  right: -30px;
+}
