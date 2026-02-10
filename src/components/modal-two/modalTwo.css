@@ -1,0 +1,38 @@
+.dialogContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed is relative the viewport and not the immediate parent unlike absolute. hence, it is safer */
+  position: fixed;
+  /* position: absolute; this will create problem if its immediate parent is not body and is set to relative*/
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.51px);
+}
+
+.dialog {
+  border: 1px solid black;
+  max-width: 60vw;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.dialog-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgb(72, 72, 72);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+}
+
+.dialog-close-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}

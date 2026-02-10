@@ -20,6 +20,7 @@ import CarouselComp from "./components/carousel";
 import CarouselOne from "./components/carousel-one";
 import FetchData from "./components/api-data-fetch";
 import ModalOne from "./components/modal-one";
+import Dialog from "./components/modal-two";
 
 function App() {
   return (
@@ -42,8 +43,9 @@ function App() {
       {/* <GridLights /> */}
       {/* <Accordion /> */}
       {/* <CarouselComp /> */}
-      <CarouselOne />
+      {/* <CarouselOne /> */}
       {/* <ModalOne /> */}
+      <Dialog />
       {/* <FetchData /> */}
       {/* <PolyfillsTester /> */}
     </div>

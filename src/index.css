@@ -89,8 +89,7 @@ button.accord-title-btn {
 }
 
 /* MODAL */
-.modal-wrapper{
-  
+.modal-wrapper {
 }
 .modal-container {
   position: fixed;
@@ -100,3 +99,5 @@ button.accord-title-btn {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Dialog: modal-two */
