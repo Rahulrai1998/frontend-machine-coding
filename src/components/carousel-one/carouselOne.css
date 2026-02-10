@@ -1,14 +1,99 @@
-img {
-  height: 400px;
+.carousel-one-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  /* opacity: 0; */
+  /* transform: translateX(100%); */
+  /* transition: transform ease-in-out 4s; */
+}
+
+.right-image-show {
+  display: inline;
+  flex-grow: 1;
+  /* transform: translateX(0%); */
+  animation: showAnimation 1s ease-in-out forwards;
+  /* opacity: 1 !important; */
+}
+.right-image-hide {
+  /* flex-shrink: 0; */
+  /* display: none; */
+  /* transform: translateX(-300%); */
+  animation: hideAnimation 1s ease-in-out forwards;
+  /* opacity: 0; */
+}
+
+@keyframes showAnimation {
+  from {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes hideAnimation {
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+}
+
+.left-image-show {
+  display: inline;
+  flex-grow: 1;
+  /* transform: translateX(0%); */
+  animation: leftshowAnimation 1s ease-in-out forwards;
+  /* opacity: 1 !important; */
+}
+.left-image-hide {
+  /* flex-shrink: 0; */
+  /* display: none; */
+  /* transform: translateX(-300%); */
+  animation: lefthideAnimation 1s ease-in-out forwards;
+  /* opacity: 0; */
+}
+
+@keyframes leftshowAnimation {
+  from {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
+@keyframes lefthideAnimation {
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(100%);
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .container {
   margin: 100px auto;
   width: 60%;
   position: relative;
+  cursor: pointer;
 }
 
 .arrow-btn {
@@ -24,7 +109,9 @@ img {
   color: rgb(255, 255, 255);
   font-size: 2rem;
   transform: translateY(-50%);
+  z-index: 1;
 }
+
 .left-arrow-btn {
   left: 1rem;
 }

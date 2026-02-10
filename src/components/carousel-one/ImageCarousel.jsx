@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 export const ImageCarousel = ({ data }) => {
   const [current, setCurrent] = useState(0);
+  const [showAnimation, setShowAnimation] = useState({
+    "image-show": "right-image-show",
+    "image-hide": "right-image-hide",
+  });
+
   const dataLen = data.length;
 
   // let interval; this variable will get re-defined on every re-render and won't persist/hold its previous value
@@ -15,12 +20,22 @@ export const ImageCarousel = ({ data }) => {
     if (current === 0) setCurrent(dataLen - 1);
     //this we react make sure that we get updated value always.
     else setCurrent((prev) => prev - 1);
+    setShowAnimation({
+      "image-show": "left-image-show",
+      "image-hide": "left-image-hide",
+    });
   };
 
   const handleNext = () => {
     setCurrent((prev) => {
-      if (prev === dataLen - 1) return 0;
+      if (prev === dataLen - 1) {
+        return 0;
+      }
       return prev + 1;
+    });
+    setShowAnimation({
+      "image-show": "right-image-show",
+      "image-hide": "right-image-hide",
     });
   };
 
@@ -46,15 +61,35 @@ export const ImageCarousel = ({ data }) => {
         }, 2000);
       }}
     >
-      {current}
       <button className="left-arrow-btn arrow-btn" onClick={handlePrevious}>
         {"<"}
       </button>
-      <img src={data[current]?.download_url} alt="image one" />
 
+      {/* we can this single image approach if don't want the animation*/}
+      {/* <img
+        src={data[current].download_url}
+        alt="image one"
+        className={`carousel-one-img`}
+      /> */}
+      <div className="image-container">
+        {data?.map((link, idx) => (
+          <img
+            src={link.download_url}
+            alt="image one"
+            className={`carousel-one-img ${idx !== current ? showAnimation["image-hide"] : showAnimation["image-show"]}`}
+          />
+        ))}
+      </div>
+      
       <section className="img-stepper">
-        {data?.map((dot) => (
-          <button key={dot.id} className="stepper-icon"></button>
+        {data?.map((dot, index) => (
+          <button
+            onClick={() => {
+              setCurrent(index);
+            }}
+            key={dot.id}
+            className={`stepper-icon ${index === current ? "current-step" : null}`}
+          ></button>
         ))}
       </section>
 

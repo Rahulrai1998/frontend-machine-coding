@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-
 import TabList from "./components/tab-list";
 import Theme from "./components/theme-provider";
 import MuiTab from "./components/mui-tabs";
@@ -42,7 +41,7 @@ function App() {
       {/* <Todo /> */}
       {/* <GridLights /> */}
       {/* <Accordion /> */}
-      <CarouselComp />
+      {/* <CarouselComp /> */}
       <CarouselOne />
       {/* <ModalOne /> */}
       {/* <FetchData /> */}
