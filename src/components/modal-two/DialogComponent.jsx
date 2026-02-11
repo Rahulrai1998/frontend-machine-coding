@@ -22,8 +22,16 @@ const DialogComponent = ({ onClose, children }) => {
   };
 
   useEffect(() => {
+    //close modal on esc click
+    function onKeyup(e) {
+      console.log(e + " " + e.code);
+      if (e.code === "Escape") handleClick();
+    }
+    document.addEventListener("keyup", onKeyup);
+
     // event listener cleanup on unmounting
     return () => {
+      document.removeEventListener("keyup", onKeyup);
       if (dialogContainerRef.current)
         dialogContainerRef.current.removeEventListener("animationend", () => {
           onClose();
