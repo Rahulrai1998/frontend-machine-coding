@@ -15,7 +15,11 @@ const Modal = ({ open, handleModal }) => {
     //"mousedown" event trigger before "click" evnent
     //hence, the modal is opening on button click.
     document.addEventListener("mousedown", cb);
-  }, [open]);
+
+    return () => {
+      document.removeEventListener("mousedown", cb);
+    };
+  }, [handleModal, parentRef]);
 
   if (!open) return null;
   return (

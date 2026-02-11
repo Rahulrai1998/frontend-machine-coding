@@ -16,7 +16,7 @@ const DialogComponent = ({ onClose, children }) => {
     );
   };
 
-  //close the modal on clicking outside the modal
+  //close the modal on clicking outside the modal.
   const handleClickOutside = (e) => {
     if (e.target.className === "dialogContainer") handleClick();
   };
