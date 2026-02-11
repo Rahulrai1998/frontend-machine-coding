@@ -4,22 +4,32 @@ const DialogComponent = ({ onClose, children }) => {
   const dialogContainerRef = useRef(null);
 
   const handleClick = (e) => {
-    if (dialogContainerRef.current)
+    if (dialogContainerRef.current) {
       dialogContainerRef.current.classList.add("dialog-container-hide");
-
-    dialogContainerRef.current.addEventListener(
-      "animationend",
-      () => {
-        onClose();
-      },
-      { once: true }, //this will make sure to remove the eventListener automatically from the target element after runninig.
-    );
+      dialogContainerRef.current.addEventListener(
+        "animationend",
+        () => {
+          onClose();
+        },
+        { once: true }, //this will make sure to remove the eventListener automatically from the target element after runninig.
+      );
+    }
   };
 
   //close the modal on clicking outside the modal.
   const handleClickOutside = (e) => {
     if (e.target.className === "dialogContainer") handleClick();
   };
+
+  useEffect(() => {
+    // event listener cleanup on unmounting
+    return () => {
+      if (dialogContainerRef.current)
+        dialogContainerRef.current.removeEventListener("animationend", () => {
+          onClose();
+        });
+    };
+  }, [dialogContainerRef]);
 
   return (
     <div
