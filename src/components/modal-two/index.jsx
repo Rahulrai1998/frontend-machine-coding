@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DialogComponent from "./DialogComponent";
 import "./modalTwo.css";
+import { createPortal } from "react-dom";
 
 const Dialog = () => {
   const [show, setShow] = useState(false);
@@ -28,10 +29,36 @@ const Dialog = () => {
             remaining essentially unchanged. It was popularised in the 1960s
             with the release of Letraset sheets containing Lorem Ipsum passages,
             and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.{" "}
+            PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply
+            dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when
+            an unknown printer took a galley of type and scrambled it to make a
+            type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially
+            unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum. . Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem
+            Ipsum. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic
+            typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum. .
           </p>
-          <form>
-            <div>
+          {/* <form> */}
+          {/* <div>
               <label htmlFor="name">Name: </label>
               <input
                 type="text"
@@ -48,11 +75,13 @@ const Dialog = () => {
                 id="email"
                 name="email"
               />
-            </div>
-            <div>
-              <button type="submit">submit</button>
-            </div>
-          </form>
+            </div> */}
+          {/* <div> */}
+            <button type="submit" className="submit-btn">
+              submit
+            </button>
+          {/* </div> */}
+          {/* </form> */}
         </DialogComponent>
       )}
     </>
