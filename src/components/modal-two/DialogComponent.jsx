@@ -81,6 +81,10 @@ const DialogComponent = ({ onClose, children }) => {
   //we need this createPotal() to bring the modal in direct child to body.
   return createPortal(
     <div
+      aria-labelledby="modal-title"
+      aria-describedby="modal-content"
+      aria-label="Modal"
+      aria-modal="true"
       is-modal="true" //it's a flag to differentiate b/w other body children
       className="dialogContainer"
       ref={dialogContainerRef}
@@ -113,5 +117,13 @@ Dialog-Modal Accessibilty guidlines & approaches.
     - we will use createPortal() to liftup our modal to body direct child level. i.e body -> dialog
 2. Focus Capturing: Via tab or shift+tab focus should not leave the dialog until the dialog is closed. 
 3. When we open modal the first focusable element should be get focused.
+4. When we close the dialog, the focus set back to the triggering element, and if triggering element is not there focus should be added on the relevant element.
+5. aria-labelledby should be there.
+6. if there is description in the dialog, add id to it and use 'aria-describedby' to match it. 
+
+aria-labelledby : for primary and short name of an element.
+aria-describedby: for more descriptive and additional info of the element.
+
+7. use aria-modal = true, it is an explicit property that indicates and informs the assistive technologies that the element is a modal and the content outside the this modal should be inert and non-accessible and interactive. Previously we need to use aria-hidden = true on outiside elements to achieve this behaviour.
 
 */

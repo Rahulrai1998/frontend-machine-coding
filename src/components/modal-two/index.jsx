@@ -19,8 +19,8 @@ const Dialog = () => {
       <button onClick={handleShowDialog}>open dialog</button>
       {show && (
         <DialogComponent onClose={handleCloseDialog}>
-          <h2>Modal Title</h2>
-          <p>
+          <h2 id="modal-title">Modal Title</h2>
+          <p id="modal-content">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -77,9 +77,9 @@ const Dialog = () => {
               />
             </div> */}
           {/* <div> */}
-            <button type="submit" className="submit-btn">
-              submit
-            </button>
+          <button type="submit" className="submit-btn">
+            submit
+          </button>
           {/* </div> */}
           {/* </form> */}
         </DialogComponent>
