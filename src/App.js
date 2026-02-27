@@ -21,33 +21,39 @@ import CarouselOne from "./components/carousel-one";
 import FetchData from "./components/api-data-fetch";
 import ModalOne from "./components/modal-one";
 import Dialog from "./components/modal-two";
+import ErrorBoundary from "./ErrorBoundary";
+import FallbackUI from "./FallbackUI";
 
 function App() {
   return (
     <div className="App">
-      {/* <TabList/> */}
-      {/* <Theme /> */}
-      {/* <MuiTab /> */}
-      {/* <MuiTabsPkg /> */}
-      {/* <TabComponent /> */}
-      {/* <AutoSuggestions /> */}
-      {/* <TabForm /> */}
-      {/* <Pagination /> */}
-      {/* <AutoSuggestions /> */}
-      {/* <ProgressBar /> */}
-      {/* <Timer />  */}
-      {/* <Dropdown /> */}
-      {/* <Calculator /> */}
-      {/* <CalculatorOptm /> */}
-      {/* <Todo /> */}
-      {/* <GridLights /> */}
-      {/* <Accordion /> */}
-      {/* <CarouselComp /> */}
-      {/* <CarouselOne /> */}
-      {/* <ModalOne /> */}
-      <Dialog />
-      {/* <FetchData /> */}
-      {/* <PolyfillsTester /> */}
+      <ErrorBoundary fallback={<FallbackUI />}>
+        {/* <TabList/> */}
+        {/* <Theme /> */}
+        {/* <MuiTab /> */}
+        {/* <MuiTabsPkg /> */}
+        {/* <TabComponent /> */}
+        {/* <AutoSuggestions /> */}
+        {/* <TabForm /> */}
+        {/* <Pagination /> */}
+        {/* <AutoSuggestions /> */}
+        {/* <ProgressBar /> */}
+        {/* <Timer />  */}
+        {/* <Dropdown /> */}
+        {/* <Calculator /> */}
+        {/* <CalculatorOptm /> */}
+        {/* <Todo /> */}
+        {/* <GridLights /> */}
+        {/* <Accordion /> */}
+        {/* <CarouselComp /> */}
+        {/* <CarouselOne /> */}
+        {/* <ModalOne /> */}
+        {/* <Dialog /> */}
+
+        {/* <FetchData /> */}
+
+        <PolyfillsTester />
+      </ErrorBoundary>
     </div>
   );
 }
