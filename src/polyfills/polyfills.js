@@ -85,7 +85,7 @@ function once(func, cxt) {
 }
 
 //simple-one without apply or context
-function once(fun) {
+function once2(fun) {
   let ran;
   return function (...args) {
     console.log(fun);
@@ -98,7 +98,7 @@ function once(fun) {
 }
 
 //another approach
-function once(func) {
+function once3(func) {
   let hasBeenCalled = false;
   let result;
 

@@ -23,6 +23,7 @@ import ModalOne from "./components/modal-one";
 import Dialog from "./components/modal-two";
 import ErrorBoundary from "./ErrorBoundary";
 import FallbackUI from "./FallbackUI";
+import DebouncedValue from "./components/debounce";
 
 function App() {
   return (
@@ -49,10 +50,10 @@ function App() {
         {/* <CarouselOne /> */}
         {/* <ModalOne /> */}
         {/* <Dialog /> */}
-
         {/* <FetchData /> */}
+        <DebouncedValue />
 
-        <PolyfillsTester />
+        {/* <PolyfillsTester /> */}
       </ErrorBoundary>
     </div>
   );
