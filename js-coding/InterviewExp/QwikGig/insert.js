@@ -5,6 +5,7 @@ let arr = [1, 2, 34, 5, 6, 77, 8, 8, 5, 54, 4]
 //Insert num at position in arr inplace without any built-in methods.
 //do the same in new array.
 
+//Manual insetion.
 let len = arr.length
 let prev;
 arr.forEach((cur, i, arr)=>{

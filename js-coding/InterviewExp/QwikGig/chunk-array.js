@@ -1,4 +1,13 @@
-// let arr = ["Iraq", "India", "Africa", "Japan", "United States", "united kingdom", "Mexico", "Russia"];
+let arr = [
+  "Iraq",
+  "India",
+  "Africa",
+  "Japan",
+  "United States",
+  "united kingdom",
+  "Mexico",
+  "Russia",
+];
 
 // output should be
 // {
@@ -9,20 +18,19 @@
 //   [ 'united kingdom' ]
 // }
 
-let result = {}
+let result = {};
 let len = arr.length;
 
-
-for(let i=0;i<len;i++){
-    let childArr = []
-    let currLen = arr[i].length
-    for(let j = 0 ; j <len ; j++){
-        if(arr[j].length === currLen){
-            childArr.push(arr[j])
-        }
+for (let i = 0; i < len; i++) {
+  let childArr = [];
+  let currLen = arr[i].length;
+  for (let j = 0; j < len; j++) {
+    if (arr[j].length === currLen) {
+      childArr.push(arr[j]);
     }
-    result.push(childArr)
+  }
+
+  result[childArr] = childArr;
 }
 
-
-console.log(result)
+console.log(result);

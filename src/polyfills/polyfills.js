@@ -73,13 +73,43 @@ const myThrottle = (callback, delay) => {
   };
 };
 
-function once(func, ctx) {
-  let value;
-  if (func) {
-    value = func.apply(ctx || this, arguments);
-    func = null;
-  }
-  return value;
+function once(func, cxt) {
+  let ran;
+  return function () {
+    if (func) {
+      ran = func.apply(cxt || this, arguments);
+      func = null;
+    }
+    return ran;
+  };
+}
+
+//simple-one without apply or context
+function once(fun) {
+  let ran;
+  return function (...args) {
+    console.log(fun);
+    if (fun) {
+      ran = fun(...args);
+      fun = null;
+    }
+    return ran;
+  };
+}
+
+//another approach
+function once(func) {
+  let hasBeenCalled = false;
+  let result;
+
+  return function (...args) {
+    if (!hasBeenCalled) {
+      hasBeenCalled = true;
+      result = func.apply(this, args);
+    }
+    // Subsequent calls return the cached result
+    return result;
+  };
 }
 
 //memoize a function for expensive computations.
