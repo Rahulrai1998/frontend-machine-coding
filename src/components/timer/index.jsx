@@ -32,7 +32,22 @@ const Timer = () => {
 
     return () => clearInterval(timer);
   }, [isRunning]);
-  
+
+  //generic approach
+  //   useEffect(() => {
+  //   let timer;
+  //   if (running) {
+  //     timer = setInterval(() => {
+  //       setCount((prev) => prev + 1);
+  //     }, 1000);
+  //   } else {
+  //     if (timer) clearInterval(timer);
+  //   }
+  //   return () => {
+  //     if (timer) clearInterval(timer);
+  //   };
+  // }, [running]);
+
   return (
     <div>
       <div style={{ textAlign: "center" }}>{time}</div>
