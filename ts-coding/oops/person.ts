@@ -128,7 +128,7 @@ statusCode = [200, "OK"];
 
 //here we are assigning vallues with wrong data-types at wrong positions.
 //wrong order
-let newStatusCode: CodeType = ["Ok", 200]; //this will cause error
+// let newStatusCode: CodeType = ["Ok", 200]; //this will cause error
 
 //another example
 type RGB = [number, number, number];
@@ -138,8 +138,8 @@ let coords: [number, number] = [10, 20];
 coords.push(36); //by default, allowed
 
 let newCoords: readonly [number, number] = [66, 88];
-newCoords.push(88); //error
-newCoords[0] = 45; // error
+// newCoords.push(88); //error
+// newCoords[0] = 45; // error
 
 //function types
 type CallBack = (err: Error | null, res: Color) => StringOrNumber;
@@ -162,3 +162,13 @@ const bio: BioType = {
   address: "bdx",
   year: 2023,
 };
+
+console.log("test")
+
+let count = 10; // TypeScript infers 'number'
+let message = "Hello"; // TypeScript infers 'string'
+let isActive = true; // TypeScript infers 'boolean'
+
+// function add(a: number, b: number) {
+//   return a + b; // TypeScript infers the return type as 'number'
+// }
