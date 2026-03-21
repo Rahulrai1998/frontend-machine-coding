@@ -17,3 +17,6 @@ const ProductCard = React.memo(({ product }) => {
 });
 
 export default ProductCard;
+
+
+

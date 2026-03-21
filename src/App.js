@@ -24,6 +24,7 @@ import Dialog from "./components/modal-two";
 import ErrorBoundary from "./ErrorBoundary";
 import FallbackUI from "./FallbackUI";
 import DebouncedValue from "./components/debounce";
+import HOC from "./components/hoc";
 
 function App() {
   return (
@@ -51,7 +52,8 @@ function App() {
         {/* <ModalOne /> */}
         {/* <Dialog /> */}
         {/* <FetchData /> */}
-        <DebouncedValue />
+        {/* <DebouncedValue /> */}
+        <HOC />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>

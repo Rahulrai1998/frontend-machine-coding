@@ -48,5 +48,4 @@ const stringStore = new Store<string>();
 stringStore.addItem("Test");
 console.log(stringStore.getItems()); //return array of strings
 
-
 //constraints

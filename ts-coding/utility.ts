@@ -154,3 +154,31 @@ enum UserRole {
   Editor = "EDITOR",
   Viewer = "VIEWER",
 }
+
+//Promise with Typescript
+//this function returns a Promise which will resolve in particular type of value.
+function fetchUser(id: number): Promise<{ id: number; name: string }> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ id, name: "name" });
+    }, 1000);
+  });
+}
+
+//async/await
+//it doesn't resolve to anything hence void, but will return a Promise.
+async function getUserData(id: number): Promise<void> {
+  try {
+    const user = await fetchUser(id);
+    console.log(user.name);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//generic async function
+async function fetchData<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  return response.json();
+}
+fetchData<string>("");
