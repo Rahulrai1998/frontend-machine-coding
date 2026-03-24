@@ -1,5 +1,4 @@
 import React from "react";
-
 const withStypes = (Component) => {
   return (props) => {
     return (
@@ -15,11 +14,9 @@ const withStypes = (Component) => {
 };
 const Button = ({ style, text }) => <button style={style}>Click{text}</button>;
 const Paragraph = ({ style }) => <p style={style}>Paragraph</p>;
-
 const HOC = () => {
   const StyledButton = withStypes(Button);
   const StyledParagraph = withStypes(Paragraph);
-
   return (
     <div>
       <StyledParagraph />
@@ -28,5 +25,4 @@ const HOC = () => {
     </div>
   );
 };
-
 export default HOC;

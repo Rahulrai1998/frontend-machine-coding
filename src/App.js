@@ -25,6 +25,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import FallbackUI from "./FallbackUI";
 import DebouncedValue from "./components/debounce";
 import HOC from "./components/hoc";
+import FormValid from "./components/form-validation";
 
 function App() {
   return (
@@ -53,7 +54,8 @@ function App() {
         {/* <Dialog /> */}
         {/* <FetchData /> */}
         {/* <DebouncedValue /> */}
-        <HOC />
+        {/* <HOC /> */}
+        <FormValid />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
