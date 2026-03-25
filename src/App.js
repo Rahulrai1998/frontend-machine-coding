@@ -26,6 +26,7 @@ import FallbackUI from "./FallbackUI";
 import DebouncedValue from "./components/debounce";
 import HOC from "./components/hoc";
 import FormValid from "./components/form-validation";
+import Stopwatch from "./components/stopwatch";
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
         {/* <Pagination /> */}
         {/* <AutoSuggestions /> */}
         {/* <ProgressBar /> */}
-        {/* <Timer />  */}
+        <Timer /> 
         {/* <Dropdown /> */}
         {/* <Calculator /> */}
         {/* <CalculatorOptm /> */}
@@ -55,7 +56,8 @@ function App() {
         {/* <FetchData /> */}
         {/* <DebouncedValue /> */}
         {/* <HOC /> */}
-        <FormValid />
+        {/* <FormValid /> */}
+        {/* <Stopwatch /> */}
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
