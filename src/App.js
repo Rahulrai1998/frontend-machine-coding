@@ -42,7 +42,7 @@ function App() {
         {/* <Pagination /> */}
         {/* <AutoSuggestions /> */}
         {/* <ProgressBar /> */}
-        <Timer /> 
+        {/* <Timer />  */}
         {/* <Dropdown /> */}
         {/* <Calculator /> */}
         {/* <CalculatorOptm /> */}
@@ -57,7 +57,7 @@ function App() {
         {/* <DebouncedValue /> */}
         {/* <HOC /> */}
         {/* <FormValid /> */}
-        {/* <Stopwatch /> */}
+        <Stopwatch />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>

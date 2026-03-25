@@ -1,0 +1,34 @@
+.parent {
+  position: absolute;
+  border: 1px solid rgba(240, 216, 216, 0.6);
+  width: 200px;
+  border-radius: 10px;
+  color: rgb(48, 154, 154);
+  margin: auto;
+  padding: 1rem;
+  top: 5%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.parent button {
+  background: rgb(255, 144, 144);
+  border: none;
+  padding: 4px;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  width: 50px;
+  transition: font-size 100ms;
+}
+
+.parent button:hover {
+  /* font-size: 1.1rem; */
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
