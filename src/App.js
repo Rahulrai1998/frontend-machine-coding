@@ -27,6 +27,7 @@ import DebouncedValue from "./components/debounce";
 import HOC from "./components/hoc";
 import FormValid from "./components/form-validation";
 import Stopwatch from "./components/stopwatch";
+import JobBoard from "./components/job-board";
 
 function App() {
   return (
@@ -57,7 +58,8 @@ function App() {
         {/* <DebouncedValue /> */}
         {/* <HOC /> */}
         {/* <FormValid /> */}
-        <Stopwatch />
+        {/* <Stopwatch /> */}
+        <JobBoard />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
