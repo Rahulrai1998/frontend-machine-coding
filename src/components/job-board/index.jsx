@@ -17,7 +17,7 @@ const example = {
 
 const JobBoard = () => {
   const [jobs, setJobs] = useState([]);
-  // const [jobIds, setJobIds] = useState([]);
+  const [jobIds, setJobIds] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -35,24 +35,26 @@ const JobBoard = () => {
         const response = await fetch(`${API_URL}/v0/jobstories.json`);
         if (!response.ok) throw new Error(`Error occurred: ${response.status}`);
         const data = await response.json();
-        // setJobIds(data);
+        setJobIds(data);
 
         //use data rather jobsIds array here, bcause react async behaviour.
         //Promise.all([]) returns a promise with resolve the array of resolved values.
         /* Write a custom function to handle the Promise.all() usecase */
+
+        //
+        const listChunk = data?.slice(
+          currentPage * ITEMS_PER_PAGE,
+          currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE,
+        );
+
         const jobList = await Promise.all(
-          data
-            ?.slice(
-              currentPage * ITEMS_PER_PAGE,
-              currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE,
-            )
-            ?.map((dt) => {
-              const temp = fetch(`${API_URL}/v0/item/${dt}.json`).then((a) =>
-                a.json(),
-              );
-              console.log(temp);
-              return temp;
-            }),
+          listChunk?.map((dt) => {
+            const temp = fetch(`${API_URL}/v0/item/${dt}.json`).then((a) =>
+              a.json(),
+            );
+            console.log(temp);
+            return temp;
+          }),
           //let a = Promise.then(d=>d): a will hold a promise with pending state, which will eventually resolve to d which is returned in then() block.
 
           // data?.map(async (jobId) => {
@@ -60,6 +62,7 @@ const JobBoard = () => {
           //   return await dt.json();
           // }),
         );
+        // if (jobList.length < ITEMS_PER_PAGE) setShowLoadMoreBtn(false);
         setJobs([...jobs, ...jobList]);
       } catch (error) {
         setError(error.message);
@@ -79,7 +82,12 @@ const JobBoard = () => {
   if (error) return <p>{error}</p>;
   if (!jobs || (jobs.length === 0 && !loading)) return <p>No data!!</p>;
 
-  const loadingMore = loading && jobs.length !== 0; //it is derived state from jobs state
+  //derived states for loading and show loadmore button
+  const loadingMore = loading && jobs.length !== 0;
+  const showLoadMoreBtn = !(
+    currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE >=
+    jobIds.length
+  );
 
   return (
     <div className={styles.parentContainer}>
@@ -93,13 +101,15 @@ const JobBoard = () => {
             </div>
           ))}
       </div>
-      <button
-        className={styles.loadMoreBtn}
-        onClick={() => setCurrentPage((page) => page + 1)}
-        disabled={loadingMore} //EDGE CASE: while loading more list items the button needs to be non-clickable otherwise the event-handle will get trigerred unnecessarily.
-      >
-        {loadingMore ? "Loading..." : "Load more"}
-      </button>
+      {showLoadMoreBtn && (
+        <button
+          className={styles.loadMoreBtn}
+          onClick={() => setCurrentPage((page) => page + 1)}
+          disabled={loadingMore} //EDGE CASE: while loading more list items the button needs to be non-clickable otherwise the event-handle will get trigerred unnecessarily.
+        >
+          {loadingMore ? "Loading..." : "Load more"}
+        </button>
+      )}
       Page: {currentPage + 1}
     </div>
   );
@@ -114,7 +124,7 @@ const JobPosting = ({ job }) => {
       <p>
         <a href={url} target="_blank" rel="noopener">
           {title}
-        </a>{" "}
+        </a>
       </p>
       <p>
         By {by} <span className={styles.dot}></span>
@@ -124,3 +134,11 @@ const JobPosting = ({ job }) => {
     </>
   );
 };
+
+/*
+Key Pointers to focus.
+1. Calling multiple apis.
+2. Leveraging Promise.all() aggregator for parallel multiple network calls.
+3. Pagination: list items chunking respective to current page.
+4. target="_blank": vulnerability and fix
+*/
