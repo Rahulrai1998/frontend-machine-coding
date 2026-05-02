@@ -28,7 +28,9 @@ import HOC from "./components/hoc";
 import FormValid from "./components/form-validation";
 import Stopwatch from "./components/stopwatch";
 import JobBoard from "./components/job-board";
-import StarRating from "./components/star-rating/StarRating";
+import StarRating from "./components/star-rating";
+
+
 
 function App() {
   return (
@@ -60,7 +62,7 @@ function App() {
         {/* <HOC /> */}
         {/* <FormValid /> */}
         {/* <Stopwatch /> */}
-        <JobBoard />
+        {/* <JobBoard /> */}
         <StarRating />
 
         {/* <PolyfillsTester /> */}
