@@ -122,7 +122,7 @@ const JobPosting = ({ job }) => {
   return (
     <>
       <p>
-        <a href={url} target="_blank" rel="noopener">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           {title}
         </a>
       </p>
@@ -140,5 +140,5 @@ Key Pointers to focus.
 1. Calling multiple apis.
 2. Leveraging Promise.all() aggregator for parallel multiple network calls.
 3. Pagination: list items chunking respective to current page.
-4. target="_blank": vulnerability and fix
+4. target="_blank": security vulnerability and fix
 */
