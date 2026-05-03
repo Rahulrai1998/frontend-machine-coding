@@ -2,24 +2,34 @@ import React, { useState } from "react";
 import style from "./starRating.module.css";
 
 const StarRatingWidget = ({ total = 5 }) => {
-  const [starValue, setStarValue] = useState();
+  const [starValue, setStarValue] = useState(); //holds currently clicked index
+  //const [starValue, setStarValue] = useState(null); //initializing with "null" gives unexpected behaviour, better initialize with undefined.
+  const [hoverValue, setHoverValue] = useState(); //holds currently hovered index
   const { starContainer, filled } = style;
   const starArray = new Array(total).fill(undefined);
 
   const handleClick = (idx) => {
     setStarValue(idx);
   };
+
   return (
     <div>
-      {starArray?.map((elm, idx) => (
-        <span
-          className={`${starContainer} , ${idx <= starValue ? filled : null}`}
-          key={idx}
-          onClick={() => handleClick(idx)}
-        >
-          &#x2605;
-        </span>
-      ))}
+      {starArray?.map((elm, idx) => {
+        const check =
+          (idx <= starValue && hoverValue === undefined) || idx <= hoverValue;
+        console.log("TEST", check);
+        return (
+          <span
+            className={`${starContainer} , ${(idx <= starValue && hoverValue === undefined) || idx <= hoverValue ? filled : null}`}
+            key={idx}
+            onClick={() => handleClick(idx)}
+            onMouseEnter={() => setHoverValue(idx)}
+            onMouseLeave={() => setHoverValue(undefined)}
+          >
+            &#x2605;
+          </span>
+        );
+      })}
 
       {/* {Array.from({ length: total })?.map(() => (
         <span className={style.starContainer}>&#x2606;</span>
@@ -40,4 +50,6 @@ new Array(5).fill(0) //it will define and initialize the empty array with 5 0 el
 
 const arr2 = Array.from({length:5}) 
 console.log(arr2) // array with 5 undefined elements. Array methods work here.
+
+for hover effect: use noMouseEnter and onMouseLeave event handlers in conjunction.
 */
