@@ -20,57 +20,51 @@ export const FileFolderData = {
               items: [],
             },
             {
-              id:5,
-              name:"hello.html",
-              isFolder:false,
-              items:[]
+              id: 5,
+              name: "hello.html",
+              isFolder: false,
+              items: [],
             },
-            {
-              id:6,
-              name:""
-            }
           ],
         },
-        
-      ],
-    },
-    {
-      id: 2,
-      name: "Documents",
-      children: [
-        {
-          id: 3,
-          name: "Word.doc",
-        },
-        {
-          id: 4,
-          name: "Powerpoint.ppt",
-        },
-      ],
-    },
-    {
-      id: 5,
-      name: "Downloads",
-      children: [
         {
           id: 6,
-          name: "unnamed.txt",
-        },
-        {
-          id: 7,
-          name: "Misc",
-          children: [
-            {
-              id: 8,
-              name: "foo.txt",
-            },
-            {
-              id: 9,
-              name: "bar.txt",
-            },
-          ],
+          name: "public_nested_file",
+          isFolder: false,
+          items: [],
         },
       ],
+    },
+    {
+      id: 7,
+      name: "src",
+      isFolder: true,
+      items: [
+        {
+          id: 8,
+          name: "App.js",
+          isFolder: false,
+          items: [],
+        },
+        {
+          id: 9,
+          name: "index.js",
+          isFolder: false,
+          items: [],
+        },
+        {
+          id: 10,
+          name: "styles.css",
+          isFolder: false,
+          items: [],
+        },
+      ],
+    },
+    {
+      id: 10,
+      name: "package.json",
+      isFolder: false,
+      items: [],
     },
   ],
 };
