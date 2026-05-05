@@ -29,8 +29,7 @@ import FormValid from "./components/form-validation";
 import Stopwatch from "./components/stopwatch";
 import JobBoard from "./components/job-board";
 import StarRating from "./components/star-rating";
-
-
+import FileFolder from "./components/file-folder";
 
 function App() {
   return (
@@ -63,7 +62,8 @@ function App() {
         {/* <FormValid /> */}
         {/* <Stopwatch /> */}
         {/* <JobBoard /> */}
-        <StarRating />
+        {/* <StarRating /> */}
+        <FileFolder />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
