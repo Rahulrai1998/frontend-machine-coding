@@ -1,4 +1,4 @@
-export const FileFolderData = {
+const fileFolderData = {
   id: 0,
   name: "root",
   isFolder: true,
@@ -68,3 +68,5 @@ export const FileFolderData = {
     },
   ],
 };
+
+export default fileFolderData;
