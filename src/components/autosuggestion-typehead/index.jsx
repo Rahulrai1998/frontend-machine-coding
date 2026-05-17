@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
+/*
+Requirements
+1. on input focus the suggestions card should be open with fetched data.
+2. on typing some text the suggestions card should show the filtered list on the basis of input.
+3. on clicking any suggestions list item , it should be saved as input value.
+4. on clicking the list item the suggestions card should get closed.
+5. implement debounce while typing the input data.
+6. implement caching to improvise network call for same data.
+*/
 
 const AutoSuggestions = () => {
   const [recipe, setRecipe] = useState([]);

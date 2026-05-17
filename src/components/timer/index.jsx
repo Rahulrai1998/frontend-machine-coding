@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+
+/*
+Simple stopwatch
+1. start, stop and reset buttons.
+2. on start count should start from from 1 and by 1 every second.
+*/
 const Timer = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);

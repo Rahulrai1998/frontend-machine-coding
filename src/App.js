@@ -53,7 +53,7 @@ function App() {
         {/* <GridLights /> */}
         {/* <Accordion /> */}
         {/* <CarouselComp /> */}
-        {/* <CarouselOne /> */}
+        <CarouselOne />
         {/* <ModalOne /> */}
         {/* <Dialog /> */}
         {/* <FetchData /> */}
@@ -63,7 +63,7 @@ function App() {
         {/* <Stopwatch /> */}
         {/* <JobBoard /> */}
         {/* <StarRating /> */}
-        <FileFolder />
+        {/* <FileFolder /> */}
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
