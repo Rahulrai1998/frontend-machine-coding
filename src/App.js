@@ -46,14 +46,14 @@ function App() {
         {/* <AutoSuggestions /> */}
         {/* <ProgressBar /> */}
         {/* <Timer />  */}
-        {/* <Dropdown /> */}
+        <Dropdown />
         {/* <Calculator /> */}
         {/* <CalculatorOptm /> */}
         {/* <Todo /> */}
         {/* <GridLights /> */}
         {/* <Accordion /> */}
         {/* <CarouselComp /> */}
-        <CarouselOne />
+        {/* <CarouselOne /> */}
         {/* <ModalOne /> */}
         {/* <Dialog /> */}
         {/* <FetchData /> */}

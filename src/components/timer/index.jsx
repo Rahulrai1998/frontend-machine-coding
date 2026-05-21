@@ -16,6 +16,7 @@ const Timer = () => {
   const handleStop = () => {
     setIsRunning(false);
   };
+  
   const handleReset = () => {
     setIsRunning(false);
     setTime(0);
