@@ -125,3 +125,14 @@ function memoize(func, ctx) {
     return memo[key];
   };
 }
+
+//array.forEach(callback): it runs the passed callback function on every element of the array. Used for side-effects like logging, DOM manipulation etc.
+Array.prototype.myForEach = function (callback) {
+  for (let idx = 0; idx < this.length; idx++) {
+    callback(this[idx], idx, this);
+  }
+};
+
+["My", "Name", "is", "Rahul"].myForEach((elm, i, arr) => {
+  console.log(elm, i, arr);
+});
