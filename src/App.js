@@ -30,6 +30,7 @@ import Stopwatch from "./components/stopwatch";
 import JobBoard from "./components/job-board";
 import StarRating from "./components/star-rating";
 import FileFolder from "./components/file-folder";
+import VolumeAdapter from "./components/VolumeRegulator";
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
         {/* <AutoSuggestions /> */}
         {/* <ProgressBar /> */}
         {/* <Timer />  */}
-        <Dropdown />
+        {/* <Dropdown /> */}
         {/* <Calculator /> */}
         {/* <CalculatorOptm /> */}
         {/* <Todo /> */}
@@ -64,6 +65,7 @@ function App() {
         {/* <JobBoard /> */}
         {/* <StarRating /> */}
         {/* <FileFolder /> */}
+        <VolumeAdapter />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>

@@ -20,6 +20,7 @@ const Folder = ({ folderData }) => {
   };
 
   const handleSaveNew = (e) => {
+    console.log(e);
     // 1.b
     if (e.keyCode === 13 && e.target.value) {
       console.log(e.target.value);
