@@ -31,6 +31,8 @@ import JobBoard from "./components/job-board";
 import StarRating from "./components/star-rating";
 import FileFolder from "./components/file-folder";
 import VolumeAdapter from "./components/VolumeRegulator";
+import ReduxCounter from "./components/redux-counter";
+
 
 function App() {
   return (
@@ -65,7 +67,8 @@ function App() {
         {/* <JobBoard /> */}
         {/* <StarRating /> */}
         {/* <FileFolder /> */}
-        <VolumeAdapter />
+        {/* <VolumeAdapter /> */}
+        <ReduxCounter />
 
         {/* <PolyfillsTester /> */}
       </ErrorBoundary>
