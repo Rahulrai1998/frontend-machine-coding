@@ -8,7 +8,6 @@ const VolumeAdapter = () => {
   });
   const { music, voice } = data;
 
-  console.log(typeof music);
   const volume = Number(music) + Number(voice);
 
   const handleChange = (e) => {
@@ -18,7 +17,7 @@ const VolumeAdapter = () => {
         return { ...prev, [e.target.name]: e.target.value };
       else return prev;
     });
-  };
+  }; 
 
   return (
     <div>
