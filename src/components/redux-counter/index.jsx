@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Privacy from "./Privacy";
-import { counterActions } from "../../store";
+import { counterActions } from "../../store/counterSlice";
+
 
 const ReduxCounter = () => {
   const inputRef = useRef(0);
   // const counter = useSelector((store) => store.counter); REDUX
   const counter = useSelector((store) => store.counter.count);
-  const status = useSelector((store) => store.showCounter);
+  const status = useSelector((store) => store.privacy.showCounter);
   const dispatch = useDispatch();
   return (
     <div>
